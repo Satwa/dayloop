@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		72443DEF2306D16B00E2BEB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443DEE2306D16B00E2BEB9 /* AppDelegate.swift */; };
 		72443DF12306D16B00E2BEB9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443DF02306D16B00E2BEB9 /* SceneDelegate.swift */; };
-		72443DF32306D16B00E2BEB9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443DF22306D16B00E2BEB9 /* ContentView.swift */; };
+		72443DF32306D16B00E2BEB9 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443DF22306D16B00E2BEB9 /* TasksView.swift */; };
 		72443DF52306D16D00E2BEB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72443DF42306D16D00E2BEB9 /* Assets.xcassets */; };
 		72443DF82306D16D00E2BEB9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72443DF72306D16D00E2BEB9 /* Preview Assets.xcassets */; };
 		72443DFB2306D16D00E2BEB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72443DF92306D16D00E2BEB9 /* LaunchScreen.storyboard */; };
 		72443E062306D16D00E2BEB9 /* DayloopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443E052306D16D00E2BEB9 /* DayloopTests.swift */; };
 		72443E112306D16D00E2BEB9 /* DayloopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443E102306D16D00E2BEB9 /* DayloopUITests.swift */; };
+		72443E232306D28300E2BEB9 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443E222306D28300E2BEB9 /* Storage.swift */; };
+		72443E252306D34300E2BEB9 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443E242306D34300E2BEB9 /* TaskModel.swift */; };
+		72443E272306D53700E2BEB9 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443E262306D53700E2BEB9 /* AddTaskView.swift */; };
+		72443E292306D9F900E2BEB9 /* TasksStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443E282306D9F900E2BEB9 /* TasksStorageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +42,7 @@
 		72443DEB2306D16B00E2BEB9 /* Dayloop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dayloop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72443DEE2306D16B00E2BEB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72443DF02306D16B00E2BEB9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		72443DF22306D16B00E2BEB9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		72443DF22306D16B00E2BEB9 /* TasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksView.swift; sourceTree = "<group>"; };
 		72443DF42306D16D00E2BEB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72443DF72306D16D00E2BEB9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		72443DFA2306D16D00E2BEB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +53,10 @@
 		72443E0C2306D16D00E2BEB9 /* DayloopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DayloopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72443E102306D16D00E2BEB9 /* DayloopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayloopUITests.swift; sourceTree = "<group>"; };
 		72443E122306D16D00E2BEB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		72443E222306D28300E2BEB9 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		72443E242306D34300E2BEB9 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		72443E262306D53700E2BEB9 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
+		72443E282306D9F900E2BEB9 /* TasksStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksStorageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +107,10 @@
 		72443DED2306D16B00E2BEB9 /* Dayloop */ = {
 			isa = PBXGroup;
 			children = (
-				72443DEE2306D16B00E2BEB9 /* AppDelegate.swift */,
-				72443DF02306D16B00E2BEB9 /* SceneDelegate.swift */,
-				72443DF22306D16B00E2BEB9 /* ContentView.swift */,
+				72443E1E2306D19000E2BEB9 /* Supporting Files */,
+				72443E212306D1AE00E2BEB9 /* ViewModels */,
+				72443E202306D1A300E2BEB9 /* Models */,
+				72443E1F2306D19A00E2BEB9 /* Views */,
 				72443DF42306D16D00E2BEB9 /* Assets.xcassets */,
 				72443DF92306D16D00E2BEB9 /* LaunchScreen.storyboard */,
 				72443DFC2306D16D00E2BEB9 /* Info.plist */,
@@ -134,6 +143,41 @@
 				72443E122306D16D00E2BEB9 /* Info.plist */,
 			);
 			path = DayloopUITests;
+			sourceTree = "<group>";
+		};
+		72443E1E2306D19000E2BEB9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				72443DEE2306D16B00E2BEB9 /* AppDelegate.swift */,
+				72443DF02306D16B00E2BEB9 /* SceneDelegate.swift */,
+				72443E222306D28300E2BEB9 /* Storage.swift */,
+				72443E282306D9F900E2BEB9 /* TasksStorageManager.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		72443E1F2306D19A00E2BEB9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				72443DF22306D16B00E2BEB9 /* TasksView.swift */,
+				72443E262306D53700E2BEB9 /* AddTaskView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		72443E202306D1A300E2BEB9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				72443E242306D34300E2BEB9 /* TaskModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		72443E212306D1AE00E2BEB9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +311,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72443E292306D9F900E2BEB9 /* TasksStorageManager.swift in Sources */,
 				72443DEF2306D16B00E2BEB9 /* AppDelegate.swift in Sources */,
+				72443E232306D28300E2BEB9 /* Storage.swift in Sources */,
+				72443E252306D34300E2BEB9 /* TaskModel.swift in Sources */,
+				72443E272306D53700E2BEB9 /* AddTaskView.swift in Sources */,
 				72443DF12306D16B00E2BEB9 /* SceneDelegate.swift in Sources */,
-				72443DF32306D16B00E2BEB9 /* ContentView.swift in Sources */,
+				72443DF32306D16B00E2BEB9 /* TasksView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
