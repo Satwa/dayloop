@@ -8,13 +8,20 @@
 
 import UIKit
 
+let notificationCenter = UNUserNotificationCenter.current()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let options: UNAuthorizationOptions = [.alert, .sound]
+        notificationCenter.requestAuthorization(options: options) { (granted, error) in
+            if !granted {
+                print("Something went wrong")
+            }
+        }
+        
         return true
     }
 

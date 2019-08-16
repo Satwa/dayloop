@@ -19,6 +19,7 @@
 		72443E252306D34300E2BEB9 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443E242306D34300E2BEB9 /* TaskModel.swift */; };
 		72443E272306D53700E2BEB9 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443E262306D53700E2BEB9 /* AddTaskView.swift */; };
 		72443E292306D9F900E2BEB9 /* TasksStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443E282306D9F900E2BEB9 /* TasksStorageManager.swift */; };
+		72443E2B2306DD6500E2BEB9 /* TasksNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443E2A2306DD6500E2BEB9 /* TasksNotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		72443E242306D34300E2BEB9 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		72443E262306D53700E2BEB9 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		72443E282306D9F900E2BEB9 /* TasksStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksStorageManager.swift; sourceTree = "<group>"; };
+		72443E2A2306DD6500E2BEB9 /* TasksNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksNotificationManager.swift; sourceTree = "<group>"; };
+		72443E2C2306DDE800E2BEB9 /* Dayloop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dayloop.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,7 @@
 		72443DED2306D16B00E2BEB9 /* Dayloop */ = {
 			isa = PBXGroup;
 			children = (
+				72443E2C2306DDE800E2BEB9 /* Dayloop.entitlements */,
 				72443E1E2306D19000E2BEB9 /* Supporting Files */,
 				72443E212306D1AE00E2BEB9 /* ViewModels */,
 				72443E202306D1A300E2BEB9 /* Models */,
@@ -152,6 +156,7 @@
 				72443DF02306D16B00E2BEB9 /* SceneDelegate.swift */,
 				72443E222306D28300E2BEB9 /* Storage.swift */,
 				72443E282306D9F900E2BEB9 /* TasksStorageManager.swift */,
+				72443E2A2306DD6500E2BEB9 /* TasksNotificationManager.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -312,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72443E292306D9F900E2BEB9 /* TasksStorageManager.swift in Sources */,
+				72443E2B2306DD6500E2BEB9 /* TasksNotificationManager.swift in Sources */,
 				72443DEF2306D16B00E2BEB9 /* AppDelegate.swift in Sources */,
 				72443E232306D28300E2BEB9 /* Storage.swift in Sources */,
 				72443E252306D34300E2BEB9 /* TaskModel.swift in Sources */,
@@ -482,6 +488,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Dayloop/Dayloop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "Dayloop/Preview\\ Content";
 				DEVELOPMENT_TEAM = Q5Y8T5J8BJ;
@@ -502,6 +509,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Dayloop/Dayloop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "Dayloop/Preview\\ Content";
 				DEVELOPMENT_TEAM = Q5Y8T5J8BJ;

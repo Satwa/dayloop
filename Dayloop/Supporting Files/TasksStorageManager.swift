@@ -11,6 +11,8 @@ import SwiftUI
 import Combine
 
 class TasksStorageManager: ObservableObject {
+    var tasksNotificationManager: TasksNotificationManager = TasksNotificationManager()
+    
     @Published var tasks: [Task] = []
     
     init(){
@@ -22,6 +24,8 @@ class TasksStorageManager: ObservableObject {
     
     func addTask(task: Task){
         tasks.append(task)
+        
+        tasksNotificationManager.scheduleNotification(task: task)
         
         saveTasks() // wip
     }
