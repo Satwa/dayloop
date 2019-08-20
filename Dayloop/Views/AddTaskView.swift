@@ -26,19 +26,23 @@ struct AddTaskView: View {
                 Text("Daily").tag(0)
                 Text("Weekly").tag(1)
                 Text("Monthly").tag(2)
+                // TODO: run on weekdays
+                // TODO: run every X days
+                // TODO: run on weekend
+                // TODO: change in multiple day selection for weekly
             }
             Stepper(value: $hour, in: 0...23) {
                 Text("Run at \(hour)")
             }
             segment > 0 ?
-                segment == 1 ? ViewBuilder.buildEither(first: Picker("Day", selection: $day){
-                    Text("Monday").tag(0)
-                    Text("Tuesday").tag(1)
-                    Text("Wednesday").tag(2)
-                    Text("Thursday").tag(3)
-                    Text("Friday").tag(4)
-                    Text("Saturday").tag(5)
-                    Text("Sunday").tag(6)
+                segment == 1 ? ViewBuilder.buildEither(first: Picker("Run on", selection: $day){
+                    Text("Monday").tag(2)
+                    Text("Tuesday").tag(3)
+                    Text("Wednesday").tag(4)
+                    Text("Thursday").tag(5)
+                    Text("Friday").tag(6)
+                    Text("Saturday").tag(7)
+                    Text("Sunday").tag(1)
                 }) : ViewBuilder.buildEither(second: Stepper(value: $day, in: 1...31) {
                     Text("Run on \(day)")
                 })
@@ -52,7 +56,7 @@ struct AddTaskView: View {
                 scheduleType = .monthly
             }
             self.tasksManager.addTask(task: Task(name: self.name, schedule: scheduleType, run_hour: self.hour, run_day: self.day))
-            self.presentationMode.value.dismiss()
+            self.presentationMode.wrappedValue.dismiss()
         })
     }
 }

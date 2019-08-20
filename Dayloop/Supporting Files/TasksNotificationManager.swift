@@ -38,25 +38,47 @@ class TasksNotificationManager: ObservableObject{
         content.sound =  .default
         content.badge = 1
         
-        let date = Date(timeIntervalSinceNow: 3600)
+        
+        func getDate() -> DateComponents {
+            let date = Date()
+            let calendar = Calendar.current
+            
+            return calendar.dateComponents([.day, .weekday, .hour, .minute, .second], from: date)
+        }
+        
+        var date: Date
         var triggerer: DateComponents
         var trigger: UNCalendarNotificationTrigger
+        
+        // TODO: Replace offset-based to https://developer.apple.com/documentation/usernotifications/scheduling_a_notification_locally_from_your_app
         
         switch task.schedule {
             case .daily:
                 print("daily")
-                triggerer = Calendar.current.dateComponents([.hour, .minute, .second], from: date)
+                let offsetInSeconds = (task.run_hour - getDate().hour!) * 60 * 60
+                
+                date = Date(timeIntervalSinceNow: TimeInterval(offsetInSeconds))
+                triggerer = Calendar.current.dateComponents([.hour], from: date)
                 trigger = UNCalendarNotificationTrigger(dateMatching: triggerer, repeats: true)
             case .weekly:
                 print("weekly")
-                triggerer = Calendar.current.dateComponents([.weekday, .hour, .minute, .second], from: date)
+                let daysOffsetInSeconds  = (task.run_day! - getDate().weekday!) * 24 * 60 * 60
+                let hoursOffsetInSeconds = (task.run_hour - getDate().hour!) * 60 * 60
+                let offsetInSeconds = daysOffsetInSeconds + hoursOffsetInSeconds
+                
+                date = Date(timeIntervalSinceNow: TimeInterval(offsetInSeconds))
+                
+                triggerer = Calendar.current.dateComponents([.weekday, .hour], from: date)
                 trigger = UNCalendarNotificationTrigger(dateMatching: triggerer, repeats: true)
             case .monthly:
                 print("monthly")
-                triggerer = Calendar.current.dateComponents([.day, .weekday, .hour, .minute, .second], from: date)
+                let hoursOffsetInSeconds = (task.run_hour - getDate().hour!) * 60 * 60
+                let daysOffsetInSeconds  = (task.run_day! - getDate().day!) * 24 * 60 * 60
+                let offsetInSeconds = daysOffsetInSeconds + hoursOffsetInSeconds
+                
+                date = Date(timeIntervalSinceNow: TimeInterval(offsetInSeconds))
+                triggerer = Calendar.current.dateComponents([.day, .hour], from: date)
                 trigger = UNCalendarNotificationTrigger(dateMatching: triggerer, repeats: true)
-            default:
-                print("Missing case: default returned")
         }
         
         let identifier = "DLTaskNotification_\(task.id)"

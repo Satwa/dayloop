@@ -16,7 +16,7 @@ class TasksStorageManager: ObservableObject {
     @Published var tasks: [Task] = []
     
     init(){
-//        Storage.remove("tasks.json", from: .documents)
+//        Storage.remove("tasks.json", from: .documents) // execute when model changes
         if Storage.fileExists("tasks.json", in: .documents) {
             tasks = Storage.retrieve("tasks.json", from: .documents, as: [Task].self)
         }
@@ -27,10 +27,17 @@ class TasksStorageManager: ObservableObject {
         
         tasksNotificationManager.scheduleNotification(task: task)
         
-        saveTasks() // wip
+        saveTasks()
     }
     
     func saveTasks(){
         Storage.store(tasks, to: .documents, as: "tasks.json")
+    }
+    
+    func removeTask(index: Int){
+        // TODO: Ask twice?
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: ["DLTaskNotification_\(tasks[index].id)"])
+        tasks.remove(at: index)
+        saveTasks()
     }
 }
