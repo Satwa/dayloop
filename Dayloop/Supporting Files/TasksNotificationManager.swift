@@ -38,14 +38,6 @@ class TasksNotificationManager: ObservableObject{
         content.sound =  .default
         content.badge = 1
         
-        
-        func getDate() -> DateComponents {
-            let date = Date()
-            let calendar = Calendar.current
-            
-            return calendar.dateComponents([.day, .weekday, .hour, .minute, .second], from: date)
-        }
-        
         var date: Date
         var triggerer: DateComponents
         var trigger: UNCalendarNotificationTrigger
@@ -91,6 +83,13 @@ class TasksNotificationManager: ObservableObject{
                 print("error happened: \(error)")
             }
         })
+    }
+    
+    func getDate() -> DateComponents {
+        let date = Date()
+        let calendar = Calendar.current
+        
+        return calendar.dateComponents([.day, .weekday, .hour, .minute, .second], from: date)
     }
     
 }

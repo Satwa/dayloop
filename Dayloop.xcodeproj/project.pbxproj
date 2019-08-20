@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		72257D06230C060100370C08 /* CheckboxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72257D05230C060100370C08 /* CheckboxComponent.swift */; };
 		72443DEF2306D16B00E2BEB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443DEE2306D16B00E2BEB9 /* AppDelegate.swift */; };
 		72443DF12306D16B00E2BEB9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443DF02306D16B00E2BEB9 /* SceneDelegate.swift */; };
 		72443DF32306D16B00E2BEB9 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443DF22306D16B00E2BEB9 /* TasksView.swift */; };
@@ -20,6 +21,7 @@
 		72443E272306D53700E2BEB9 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443E262306D53700E2BEB9 /* AddTaskView.swift */; };
 		72443E292306D9F900E2BEB9 /* TasksStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443E282306D9F900E2BEB9 /* TasksStorageManager.swift */; };
 		72443E2B2306DD6500E2BEB9 /* TasksNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443E2A2306DD6500E2BEB9 /* TasksNotificationManager.swift */; };
+		72C5E6D3230C142300353A0F /* TaskRowComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C5E6D2230C142300353A0F /* TaskRowComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		72257D05230C060100370C08 /* CheckboxComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxComponent.swift; sourceTree = "<group>"; };
 		72443DEB2306D16B00E2BEB9 /* Dayloop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dayloop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72443DEE2306D16B00E2BEB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72443DF02306D16B00E2BEB9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 		72443E282306D9F900E2BEB9 /* TasksStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksStorageManager.swift; sourceTree = "<group>"; };
 		72443E2A2306DD6500E2BEB9 /* TasksNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksNotificationManager.swift; sourceTree = "<group>"; };
 		72443E2C2306DDE800E2BEB9 /* Dayloop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dayloop.entitlements; sourceTree = "<group>"; };
+		72C5E6D2230C142300353A0F /* TaskRowComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		72257D04230C05D300370C08 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				72257D05230C060100370C08 /* CheckboxComponent.swift */,
+				72C5E6D2230C142300353A0F /* TaskRowComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		72443DE22306D16B00E2BEB9 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +126,7 @@
 				72443E2C2306DDE800E2BEB9 /* Dayloop.entitlements */,
 				72443E1E2306D19000E2BEB9 /* Supporting Files */,
 				72443E212306D1AE00E2BEB9 /* ViewModels */,
+				72257D04230C05D300370C08 /* Components */,
 				72443E202306D1A300E2BEB9 /* Models */,
 				72443E1F2306D19A00E2BEB9 /* Views */,
 				72443DF42306D16D00E2BEB9 /* Assets.xcassets */,
@@ -319,6 +333,8 @@
 				72443E292306D9F900E2BEB9 /* TasksStorageManager.swift in Sources */,
 				72443E2B2306DD6500E2BEB9 /* TasksNotificationManager.swift in Sources */,
 				72443DEF2306D16B00E2BEB9 /* AppDelegate.swift in Sources */,
+				72C5E6D3230C142300353A0F /* TaskRowComponent.swift in Sources */,
+				72257D06230C060100370C08 /* CheckboxComponent.swift in Sources */,
 				72443E232306D28300E2BEB9 /* Storage.swift in Sources */,
 				72443E252306D34300E2BEB9 /* TaskModel.swift in Sources */,
 				72443E272306D53700E2BEB9 /* AddTaskView.swift in Sources */,

@@ -19,6 +19,19 @@ class TasksStorageManager: ObservableObject {
 //        Storage.remove("tasks.json", from: .documents) // execute when model changes
         if Storage.fileExists("tasks.json", in: .documents) {
             tasks = Storage.retrieve("tasks.json", from: .documents, as: [Task].self)
+            
+            if Storage.fileExists("dailytasks.json", in: .caches) {
+                let cache = Storage.retrieve("dailytasks.json", from: .caches, as: DailyCache.self)
+                
+                if cache.day == "\(tasksNotificationManager.getDate().day)\(tasksNotificationManager.getDate().month)" {
+                    print("Retrieving today's cache")
+                    
+                    for i in 0..<cache.tasks.count {
+                        let findIndex = tasks.firstIndex(where: { $0.id == cache.tasks[i].id })!
+                        tasks[findIndex].done = cache.tasks[i].done
+                    }
+                }
+            }
         }
     }
     
@@ -31,7 +44,11 @@ class TasksStorageManager: ObservableObject {
     }
     
     func saveTasks(){
-        Storage.store(tasks, to: .documents, as: "tasks.json")
+        var copyTasks = tasks // Save tasks as undone, which makes sense
+        for i in 0..<copyTasks.count {
+            copyTasks[i].done = false
+        }
+        Storage.store(copyTasks, to: .documents, as: "tasks.json")
     }
     
     func removeTask(index: Int){
@@ -39,5 +56,15 @@ class TasksStorageManager: ObservableObject {
         notificationCenter.removePendingNotificationRequests(withIdentifiers: ["DLTaskNotification_\(tasks[index].id)"])
         tasks.remove(at: index)
         saveTasks()
+    }
+    
+    func saveTasksDaily(){
+        let cache = DailyCache(day: "\(tasksNotificationManager.getDate().day)\(tasksNotificationManager.getDate().month)", tasks: tasks)
+        Storage.store(cache, to: .caches, as: "dailytasks.json")
+    }
+    
+    func toggleDone(at pos: Int){
+        tasks[pos].done = tasks[pos].done != nil ? !tasks[pos].done! : true
+        saveTasksDaily()
     }
 }
