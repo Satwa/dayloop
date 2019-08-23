@@ -67,4 +67,10 @@ class TasksStorageManager: ObservableObject {
         tasks[pos].done = tasks[pos].done != nil ? !tasks[pos].done! : true
         saveTasksDaily()
     }
+    
+    func toggleDone(for id: UUID){
+        let taskIndex = tasks.firstIndex(where: { $0.id == id })!
+        tasks[taskIndex].done = tasks[taskIndex].done != nil ? !tasks[taskIndex].done! : true
+        saveTasksDaily()
+    }
 }

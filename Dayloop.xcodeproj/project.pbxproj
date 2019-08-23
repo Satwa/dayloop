@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		72257D06230C060100370C08 /* CheckboxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72257D05230C060100370C08 /* CheckboxComponent.swift */; };
+		7239454A2310449D00E3B066 /* notification.caf in Resources */ = {isa = PBXBuildFile; fileRef = 723945492310449D00E3B066 /* notification.caf */; };
 		72443DEF2306D16B00E2BEB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443DEE2306D16B00E2BEB9 /* AppDelegate.swift */; };
 		72443DF12306D16B00E2BEB9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443DF02306D16B00E2BEB9 /* SceneDelegate.swift */; };
 		72443DF32306D16B00E2BEB9 /* TasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443DF22306D16B00E2BEB9 /* TasksView.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		72257D05230C060100370C08 /* CheckboxComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxComponent.swift; sourceTree = "<group>"; };
+		723945492310449D00E3B066 /* notification.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notification.caf; sourceTree = "<group>"; };
 		72443DEB2306D16B00E2BEB9 /* Dayloop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dayloop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72443DEE2306D16B00E2BEB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72443DF02306D16B00E2BEB9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 		72443E1E2306D19000E2BEB9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				723945492310449D00E3B066 /* notification.caf */,
 				72443DEE2306D16B00E2BEB9 /* AppDelegate.swift */,
 				72443DF02306D16B00E2BEB9 /* SceneDelegate.swift */,
 				72443E222306D28300E2BEB9 /* Storage.swift */,
@@ -306,6 +309,7 @@
 				72443DFB2306D16D00E2BEB9 /* LaunchScreen.storyboard in Resources */,
 				72443DF82306D16D00E2BEB9 /* Preview Assets.xcassets in Resources */,
 				72443DF52306D16D00E2BEB9 /* Assets.xcassets in Resources */,
+				7239454A2310449D00E3B066 /* notification.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,6 +510,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Dayloop/Dayloop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "Dayloop/Preview\\ Content";
 				DEVELOPMENT_TEAM = Q5Y8T5J8BJ;
 				ENABLE_PREVIEWS = YES;
@@ -527,6 +532,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Dayloop/Dayloop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_ASSET_PATHS = "Dayloop/Preview\\ Content";
 				DEVELOPMENT_TEAM = Q5Y8T5J8BJ;
 				ENABLE_PREVIEWS = YES;
