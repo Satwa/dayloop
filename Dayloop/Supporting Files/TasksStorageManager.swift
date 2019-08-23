@@ -27,8 +27,9 @@ class TasksStorageManager: ObservableObject {
                     print("Retrieving today's cache")
                     
                     for i in 0..<cache.tasks.count {
-                        let findIndex = tasks.firstIndex(where: { $0.id == cache.tasks[i].id })!
-                        tasks[findIndex].done = cache.tasks[i].done
+                        if let findIndex = tasks.firstIndex(where: { $0.id == cache.tasks[i].id }){
+                            tasks[findIndex].done = cache.tasks[i].done
+                        }
                     }
                 }
             }
