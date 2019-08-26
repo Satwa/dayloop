@@ -67,6 +67,8 @@
 		72443E282306D9F900E2BEB9 /* TasksStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksStorageManager.swift; sourceTree = "<group>"; };
 		72443E2A2306DD6500E2BEB9 /* TasksNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksNotificationManager.swift; sourceTree = "<group>"; };
 		72443E2C2306DDE800E2BEB9 /* Dayloop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dayloop.entitlements; sourceTree = "<group>"; };
+		7266732A2314671100B5FCEB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7266732B2314676700B5FCEB /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
 		72C5E6D2230C142300353A0F /* TaskRowComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,8 @@
 		72443DE22306D16B00E2BEB9 = {
 			isa = PBXGroup;
 			children = (
+				7266732A2314671100B5FCEB /* README.md */,
+				7266732B2314676700B5FCEB /* LICENSE.md */,
 				72443DED2306D16B00E2BEB9 /* Dayloop */,
 				72443E042306D16D00E2BEB9 /* DayloopTests */,
 				72443E0F2306D16D00E2BEB9 /* DayloopUITests */,
