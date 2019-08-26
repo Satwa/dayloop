@@ -15,7 +15,33 @@ struct Task: Codable, Identifiable {
     var run_hour: Int
     var run_day: Int?
     var done: Bool? = false
+    var content: String = ""
+    
+    enum TaskKeys: CodingKey{
+        case id
+        case name
+        case schedule
+        case run_hour
+        case run_day
+        case done
+        case content
+    }
+    
 }
+
+extension Task {
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: TaskKeys.self)
+        id = try container.decode(UUID.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        schedule = try container.decode(Schedule.self, forKey: .schedule)
+        run_hour = try container.decode(Int.self, forKey: .run_hour)
+        run_day = try container.decodeIfPresent(Int.self, forKey: .run_day) ?? nil
+        done = try container.decodeIfPresent(Bool.self, forKey: .done) ?? false
+        content = try container.decodeIfPresent(String.self, forKey: .content) ?? ""
+    }
+}
+
 
 
 enum Schedule: String, Codable {

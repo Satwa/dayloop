@@ -16,10 +16,6 @@ struct TasksView: View {
     var body: some View {
         NavigationView{
             VStack{
-                NavigationLink(destination: AddTaskView()){
-                    Text("Add task")
-                }
-                
                 Picker("Options", selection: $showTasksType) {
                     Text("Today's tasks").tag(0)
                     Text("All tasks").tag(1)
@@ -28,15 +24,15 @@ struct TasksView: View {
                 List{ // TODO: Switch tags to some kind of enum w/ logic inside to reduce filter statement [this is causing memory leaks]
                     ForEach(self.tasksManager.tasks.filter{ showTasksType == 0 ? ($0.schedule == .daily || ($0.schedule == .weekly && $0.run_day! == tasksManager.tasksNotificationManager.getDate().weekday!) || ($0.schedule == .monthly && $0.run_day! == tasksManager.tasksNotificationManager.getDate().day!)) : true }){ task in
                         TaskRowComponent(task: self.$tasksManager.tasks[self.tasksManager.tasks.firstIndex(where: { $0.id == task.id })!])
-                        .onTapGesture{
-                            self.tasksManager.toggleDone(at: self.tasksManager.tasks.firstIndex(where: { $0.id == task.id })!)
-                        }
                     }
                     .onDelete(perform: self.deleteTask)
                 }
             }
             
             .navigationBarTitle("Dayloop")
+            .navigationBarItems(trailing: NavigationLink(destination: AddTaskView()){
+                Text("Add task")
+            })
         }
         .accentColor(.init("accentColor"))
     }

@@ -11,20 +11,28 @@ import SwiftUI
 struct TaskRowComponent: View {
     @Binding var task: Task
     
+    internal var tasksManager: TasksStorageManager = (UIApplication.shared.delegate as! AppDelegate).tasksManager
+    
     var body: some View {
         HStack{
             CheckboxComponent(checked: $task.done)
-            VStack(alignment: .leading){
-                Text(task.name)
-                    .layoutPriority(1)
-                    .font(.body)
-                Text("\(task.schedule.rawValue)")
-                    .font(.caption)
+            .onTapGesture{
+                self.tasksManager.toggleDone(at: self.tasksManager.tasks.firstIndex(where: { $0.id == self.task.id })!)
             }
-            .layoutPriority(1)
-            Spacer()
-            Text("\(task.run_hour)hr")
-                .foregroundColor(.gray)
+            
+            NavigationLink(destination: TaskDetailView(task: $task)) {
+                VStack(alignment: .leading){
+                    Text(task.name)
+                        .layoutPriority(1)
+                        .font(.body)
+                    Text("\(task.schedule.rawValue)")
+                        .font(.caption)
+                }
+                .layoutPriority(1)
+                Spacer()
+                Text("\(task.run_hour)hr")
+                    .foregroundColor(.gray)
+            }
         }
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		72257D06230C060100370C08 /* CheckboxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72257D05230C060100370C08 /* CheckboxComponent.swift */; };
+		722B03EB23145A040060F62E /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722B03EA23145A040060F62E /* TaskDetailView.swift */; };
 		7239454A2310449D00E3B066 /* notification.caf in Resources */ = {isa = PBXBuildFile; fileRef = 723945492310449D00E3B066 /* notification.caf */; };
 		72443DEF2306D16B00E2BEB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443DEE2306D16B00E2BEB9 /* AppDelegate.swift */; };
 		72443DF12306D16B00E2BEB9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72443DF02306D16B00E2BEB9 /* SceneDelegate.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		72257D05230C060100370C08 /* CheckboxComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxComponent.swift; sourceTree = "<group>"; };
+		722B03EA23145A040060F62E /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		723945492310449D00E3B066 /* notification.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = notification.caf; sourceTree = "<group>"; };
 		72443DEB2306D16B00E2BEB9 /* Dayloop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dayloop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72443DEE2306D16B00E2BEB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				72443DF22306D16B00E2BEB9 /* TasksView.swift */,
 				72443E262306D53700E2BEB9 /* AddTaskView.swift */,
+				722B03EA23145A040060F62E /* TaskDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				72443E292306D9F900E2BEB9 /* TasksStorageManager.swift in Sources */,
 				72443E2B2306DD6500E2BEB9 /* TasksNotificationManager.swift in Sources */,
 				72443DEF2306D16B00E2BEB9 /* AppDelegate.swift in Sources */,
+				722B03EB23145A040060F62E /* TaskDetailView.swift in Sources */,
 				72C5E6D3230C142300353A0F /* TaskRowComponent.swift in Sources */,
 				72257D06230C060100370C08 /* CheckboxComponent.swift in Sources */,
 				72443E232306D28300E2BEB9 /* Storage.swift in Sources */,
@@ -510,7 +514,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Dayloop/Dayloop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "Dayloop/Preview\\ Content";
 				DEVELOPMENT_TEAM = Q5Y8T5J8BJ;
 				ENABLE_PREVIEWS = YES;
@@ -521,6 +526,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.joshuatabakhoff.Dayloop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -532,7 +538,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Dayloop/Dayloop.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "Dayloop/Preview\\ Content";
 				DEVELOPMENT_TEAM = Q5Y8T5J8BJ;
 				ENABLE_PREVIEWS = YES;
@@ -543,6 +550,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.joshuatabakhoff.Dayloop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
