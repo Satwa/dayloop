@@ -1,12 +1,12 @@
 #  Dayloop
 ## Dead-simple recurring task reminder
 
-This app is made using SwiftUI for a learning purpose. 
+This app is made using SwiftUI for learning purpose. 
 
 Things you can do:
 
 - Add a task and schedule it (daily, weekly or monthly)
-- Get reminded with a notification at the given time
+- Get reminded with a notification at the given time (or deactivate temporarily)
 - Set a description to the task
 - Quickly answer to the notification to mark as done or snooze for 30 minutes
 - Delete a task
@@ -18,7 +18,6 @@ Things planned to be coming in the future:
 - [ ] Show a daily progress bar
 - [ ] Show a weekly progress bar
 - [ ] Streak
-- [ ] Deactivate a task temporarily
 - [ ] Remove notifications from the previous day everyday
 - [ ] Add image to task
 - [ ] Add mood to task

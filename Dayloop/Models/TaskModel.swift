@@ -16,6 +16,7 @@ struct Task: Codable, Identifiable {
     var run_day: Int?
     var done: Bool? = false
     var content: String = ""
+    var is_active: Bool = true
     
     enum TaskKeys: CodingKey{
         case id
@@ -25,6 +26,7 @@ struct Task: Codable, Identifiable {
         case run_day
         case done
         case content
+        case is_active
     }
     
 }
@@ -39,6 +41,7 @@ extension Task {
         run_day = try container.decodeIfPresent(Int.self, forKey: .run_day) ?? nil
         done = try container.decodeIfPresent(Bool.self, forKey: .done) ?? false
         content = try container.decodeIfPresent(String.self, forKey: .content) ?? ""
+        is_active = try container.decodeIfPresent(Bool.self, forKey: .is_active) ?? true
     }
 }
 

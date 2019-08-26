@@ -11,6 +11,7 @@ import SwiftUI
 struct TaskDetailView: View {
     @Binding var task: Task
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    @State var originalTaskNotificationState: Bool = true
     
     internal var tasksManager: TasksStorageManager = (UIApplication.shared.delegate as! AppDelegate).tasksManager
     
@@ -22,9 +23,13 @@ struct TaskDetailView: View {
                 TextField("Description", text: $task.content)
                     .multilineTextAlignment(.leading)
                     .lineLimit(nil)
+                
+                Toggle(isOn: $task.is_active) {
+                    Text("Notification status")
+                }
             }
             
-            Section {
+            Section{
                 VStack{
                     Spacer()
                     Button("Delete task (irreversible - no confirmation)"){
@@ -36,10 +41,26 @@ struct TaskDetailView: View {
                 }
             }
         }
-        
+        .onAppear(){
+            self.originalTaskNotificationState = self.task.is_active
+        }
         .navigationBarTitle(task.name)
         .navigationBarItems(trailing: Button("Save"){
             let task_id = self.tasksManager.tasks.firstIndex(where: { $0.id == self.task.id })! // not crash-proof
+            
+            print(self.task.is_active)
+            print(self.originalTaskNotificationState)
+            
+            if self.task.is_active != self.originalTaskNotificationState {
+                if self.task.is_active {
+                    // Reactivating a task
+                    self.tasksManager.tasksNotificationManager.scheduleNotification(task: self.task)
+                } else {
+                    // Deactivating a task
+                    self.tasksManager.tasksNotificationManager.deactivateNotification(task: self.task)
+                }
+            }
+            
             self.tasksManager.tasks[task_id] = self.task
             self.tasksManager.saveTasks()
             

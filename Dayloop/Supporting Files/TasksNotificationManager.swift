@@ -154,6 +154,10 @@ class TasksNotificationManager: ObservableObject{
         })
     }
     
+    func deactivateNotification(task: Task){
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: ["DLTaskNotification_\(task.id)"])
+    }
+    
     func getDate() -> DateComponents {
         let date = Date()
         let calendar = Calendar.current
