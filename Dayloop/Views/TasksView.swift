@@ -25,7 +25,7 @@ struct TasksView: View {
                     ForEach(self.tasksManager.tasks.filter{ showTasksType == 0 ? ($0.schedule == .daily || ($0.schedule == .weekly && $0.run_day! == tasksManager.tasksNotificationManager.getDate().weekday!) || ($0.schedule == .monthly && $0.run_day! == tasksManager.tasksNotificationManager.getDate().day!)) : true }){ task in
                         TaskRowComponent(task: self.$tasksManager.tasks[self.tasksManager.tasks.firstIndex(where: { $0.id == task.id })!])
                     }
-                    .onDelete(perform: self.deleteTask)
+//                    .onDelete(perform: self.deleteTask)
                 }
             }
             

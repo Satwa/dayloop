@@ -19,11 +19,16 @@ struct AddTaskView: View {
     @State var segment: Int = 0
     @State var hour: Int = 8
     @State var day: Int = 1
+    @State var showError: Bool = false
     
     var body: some View {
         Form {
             Section{
                 TextField("Task name", text: $name)
+                    .alert(isPresented: $showError){
+                        Alert(title: Text("Error occured"), message: Text("You should fill the name field first!"), dismissButton: .default(Text("OK")))
+                    }
+
                 
                 Picker("Type", selection: $segment){
                     Text("Daily").tag(0)
@@ -66,8 +71,12 @@ struct AddTaskView: View {
             }else if self.segment == 2 {
                 scheduleType = .monthly
             }
-            self.tasksManager.addTask(task: Task(name: self.name, schedule: scheduleType, run_hour: self.hour, run_day: self.day, content: self.content))
-            self.presentationMode.wrappedValue.dismiss()
+            if self.name != "" {
+                self.tasksManager.addTask(task: Task(name: self.name, schedule: scheduleType, run_hour: self.hour, run_day: self.day, content: self.content))
+                self.presentationMode.wrappedValue.dismiss()
+            } else {
+                self.showError = true
+            }
         })
     }
 }

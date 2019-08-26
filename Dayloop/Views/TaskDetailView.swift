@@ -16,11 +16,25 @@ struct TaskDetailView: View {
     
     var body: some View {
         Form{
-            TextField("Name", text: $task.name)
+            Section{
+                TextField("Name", text: $task.name)
+                
+                TextField("Description", text: $task.content)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(nil)
+            }
             
-            TextField("Description", text: $task.content)
-                .multilineTextAlignment(.leading)
-                .lineLimit(nil)
+            Section {
+                VStack{
+                    Spacer()
+                    Button("Delete task (irreversible - no confirmation)"){
+                        self.tasksManager.removeTask(index: self.tasksManager.tasks.firstIndex(where: { $0.id == self.task.id })!)
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                    .foregroundColor(.red)
+                    Spacer()
+                }
+            }
         }
         
         .navigationBarTitle(task.name)
